@@ -17,9 +17,12 @@ import PackagesPage from "./Component/BounceHouses/SelectPackages";
 import PackageDetails from "./Component/BounceHouses/PackageDetails";
 import CartPage from "./Component/BounceHouses/CheckoutInfoPage/CheckoutDetails";
 import PersonalInfo from "./Component/BounceHouses/CheckoutInfoPage/PersonalInfor";
+import { CartProvider } from "./Component/CartContextProvider";
+import CartPagee from "./Component/Cart";
 
 function App() {
   return (
+    <CartProvider>
     <Router> 
       <Layout>
         <Routes>
@@ -42,10 +45,13 @@ function App() {
           <Route path="/BounceHouses/SelectPartyTime" element={<PartyTime/>} /> 
           <Route path="/BounceHouses/PersonalDetails" element={<SelectDate/>} /> 
           <Route path="/BounceHouses/CartPage" element={<CartPage/>} /> 
+          <Route path="/BounceHouses/Checkout" element={<CartPagee/>} /> 
+
           <Route path="/BounceHouses/PersonalInfo" element={<PersonalInfo/>} /> 
         </Routes>
       </Layout>
     </Router>
+    </CartProvider>
   );
 }
 

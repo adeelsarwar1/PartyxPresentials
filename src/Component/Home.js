@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function Home() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { selectedDate, startTime, endTime } = location.state || {};
+  const { selectedDate, startTime, endTime, name, price, image } = location.state || {};
 
   // Format the dates and times if they are Date objects
   const formattedDate = selectedDate instanceof Date
